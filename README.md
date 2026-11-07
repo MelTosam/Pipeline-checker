@@ -9,4 +9,6 @@ Work in progress. Right now, it checks one thing: whether a workflow logs into A
 2. Run: python check_aws.py
 
 ## Why
-Stored long-lived keys can be misused if they got into the wrong hands. Temporary roles are safer. This project will measure how often public projects use each approach.
+Some GitHub Actions projects log in to AWS with stored access keys and if a bad piece of code ever runs inside the pipeline, it can read that key and use it. Temporary roles are generally considered safer because its access expires on its own, so a stolen copy stops working. 
+
+This project will measure how often public projects use each approach. It only looks at public repositories, so the results dont describe private projects or companies as a whole.
